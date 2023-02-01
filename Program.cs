@@ -30,7 +30,7 @@ namespace FinalTest{
         }
         static void Main(string[] args)
         {
-            
+            System.Console.WriteLine(string.Join(", ",ArrayFill().Where(i => i.Length < 4)));
         }
     }
 }
