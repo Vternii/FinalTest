@@ -28,9 +28,31 @@ namespace FinalTest{
             }
             return result;
         }
+        static string[] filter(string[] array,in int border)
+        {
+            int count = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Length <= border)
+                {
+                    count++;
+                }
+            }
+            string[] res = new string[count];
+            for (int i = 0, c = 0; i < array.Length; i++)
+            {
+                if (array[i].Length <= border)
+                {
+                    res[c] = array[i];
+                    c++;
+                }
+            }
+            return res;
+        }
         static void Main(string[] args)
         {
-            System.Console.WriteLine(string.Join(", ",ArrayFill().Where(i => i.Length < 4)));
+            string[] FinalResult = filter(ArrayFill(),3);
+            System.Console.WriteLine($"[{string.Join(", ",FinalResult)}]");
         }
     }
 }
